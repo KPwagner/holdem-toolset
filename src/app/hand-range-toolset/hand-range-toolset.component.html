@@ -1,0 +1,24 @@
+<h2>Hand Range</h2>
+<mat-form-field>
+  <input matInput type="text" name="textHandRange" [(ngModel)]="handRangeText">
+</mat-form-field>
+<p>Range Percentage: {{rangePercentage | number: '.2-2'}}%</p>
+<button mat-raised-button color="primary" (click)="resetHandRange();">Reset Range</button>
+<mat-grid-list cols="13">
+  <mat-grid-tile
+    *ngFor="let handRangePiece of handRange"
+    (mousedown)="enableInRange(handRangePiece)"
+    (mouseenter)="dragEnableInRange(handRangePiece)"
+    (mouseup)="toggleInRange(handRangePiece)"
+  >
+    <mat-card
+      handRangePieceDirective
+      [class.piece-in-range]="handRangePiece.isInRange === true"
+      class="no-select"
+    >
+      {{ displayRank(handRangePiece.rankOne)
+      }}{{ displayRank(handRangePiece.rankTwo)
+      }}{{ !handRangePiece.isPair ? (handRangePiece.isSuited ? "s" : "o") : "" }}
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
