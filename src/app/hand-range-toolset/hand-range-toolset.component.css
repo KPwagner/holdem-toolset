@@ -12,6 +12,10 @@ mat-card {
   margin: 0 0 20px 0;
 }
 
+.hand-range-list-container {
+  max-width: 600px;
+}
+
 .piece-in-range {
   background-color: teal;
 }

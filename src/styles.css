@@ -13,3 +13,10 @@ html, body { height: 100%; }
 
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /*** end material global styling ***/
+
+.container {
+  display: block;
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1200px;
+}

@@ -1,9 +1,11 @@
+<div class="container">
 <h2>Hand Range</h2>
 <mat-form-field>
   <input matInput type="text" name="textHandRange" [(ngModel)]="handRangeText">
 </mat-form-field>
 <p>Range Percentage: {{rangePercentage | number: '.2-2'}}%</p>
 <button mat-raised-button color="primary" (click)="resetHandRange();">Reset Range</button>
+<div class="hand-range-list-container">
 <mat-grid-list cols="13">
   <mat-grid-tile
     *ngFor="let handRangePiece of handRange"
@@ -22,3 +24,5 @@
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
+</div>
+</div>
