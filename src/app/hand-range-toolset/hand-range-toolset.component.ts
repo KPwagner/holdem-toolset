@@ -2,7 +2,7 @@ import { Component, OnInit, Directive, HostListener, ChangeDetectorRef } from '@
 import { HandRangePiece } from '../hand-range-piece';
 import { HandRangeGroups } from '../hand-range-groups';
 import { Rank } from '../ht-enums.model';
-import { DEFAULT_HAND_RANGE } from '../default-hand-range';
+import { HandRangeService } from 'src/app/services/hand-range.service';
 
 @Component({
   selector: 'ht-hand-range-toolset',
@@ -10,18 +10,18 @@ import { DEFAULT_HAND_RANGE } from '../default-hand-range';
   styleUrls: ['./hand-range-toolset.component.css']
 })
 export class HandRangeToolsetComponent implements OnInit {
-  handRange = DEFAULT_HAND_RANGE;
+  handRange: HandRangePiece[];
   handRangeText = '';
   rangePercentage = 0;
   mouseDown = false;
   startMouseDrag: HandRangePiece;
   inRangeStartState: boolean;
-  handRangeGroups = this.seperateHandRangeToGroups(this.handRange);
+  handRangeGroups: HandRangeGroups;
 
-  constructor() {}
+  constructor(private handRangeService: HandRangeService) {}
 
   ngOnInit() {
-
+    this.handRange = this.handRangeService.getDefaultHandRange();
   }
 
   displayRank(n: number): string {
