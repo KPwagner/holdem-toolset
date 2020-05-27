@@ -10,12 +10,18 @@ import { AppComponent } from './app.component';
 import { HandRangeToolsetComponent } from './hand-range-toolset/hand-range-toolset.component';
 import { HandRangePiece } from './hand-range-piece.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HandRangeCalculatorComponent } from './hand-range-toolset/hand-range-calculator/hand-range-calculator.component';
+import { HandRangeGridComponent } from './hand-range-toolset/hand-range-grid/hand-range-grid.component';
+import { HandRangeGridPieceComponent } from './hand-range-toolset/hand-range-grid-piece/hand-range-grid-piece.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HandRangeToolsetComponent,
-    HandRangePiece
+    HandRangePiece,
+    HandRangeCalculatorComponent,
+    HandRangeGridComponent,
+    HandRangeGridPieceComponent
   ],
   imports: [
     BrowserModule,

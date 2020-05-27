@@ -1,4 +1,4 @@
-import { Rank } from "./app-enums.model";
+import { Rank } from "./ht-enums.model";
 
 export interface HandRangePiece {
   rankOne: number;

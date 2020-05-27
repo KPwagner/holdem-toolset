@@ -1,11 +1,11 @@
 import { Component, OnInit, Directive, HostListener, ChangeDetectorRef } from '@angular/core';
 import { HandRangePiece } from '../hand-range-piece';
 import { HandRangeGroups } from '../hand-range-groups';
-import { Rank } from '../app-enums.model';
+import { Rank } from '../ht-enums.model';
 import { DEFAULT_HAND_RANGE } from '../default-hand-range';
 
 @Component({
-  selector: 'app-hand-range-toolset',
+  selector: 'ht-hand-range-toolset',
   templateUrl: './hand-range-toolset.component.html',
   styleUrls: ['./hand-range-toolset.component.css']
 })
@@ -20,7 +20,9 @@ export class HandRangeToolsetComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
 
   displayRank(n: number): string {
     const displayRanks = {

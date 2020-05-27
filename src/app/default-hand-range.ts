@@ -1,13 +1,15 @@
 import { HandRangePiece } from './hand-range-piece';
-import { Rank } from './app-enums.model';
+import { Rank } from './ht-enums.model';
 
 export const DEFAULT_HAND_RANGE: HandRangePiece[] = getDefaultRange();
 
 function getDefaultRange(): HandRangePiece[] {
+  // Returns a complete hand range with all piece not in range (isInRange = false)
+
   let output: HandRangePiece[] = [];
 
-  for (let i = 14; i > 1; i--) {
-    for (let j = 14; j > 1; j--) {
+  for (let i = Rank.Ace; i > (Rank.Two -1); i--) {
+    for (let j = Rank.Ace; j > (Rank.Two - 1); j--) {
       let rankOne: number;
       let rankTwo: number;
       let isSuited: boolean;
