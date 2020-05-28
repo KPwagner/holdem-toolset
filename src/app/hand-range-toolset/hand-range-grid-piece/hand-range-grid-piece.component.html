@@ -1,1 +1,7 @@
-<p>hand-range-grid-piece works!</p>
+<mat-card
+  [class.piece-in-range]="handRangePiece.isInRange === true"
+  class="no-select"
+>
+  {{ displayRank(handRangePiece.rankOne) }}{{ displayRank(handRangePiece.rankTwo)
+  }}{{ !handRangePiece.isPair ? (handRangePiece.isSuited ? "s" : "o") : "" }}
+</mat-card>

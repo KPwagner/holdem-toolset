@@ -13,15 +13,7 @@
     (mouseenter)="dragEnableInRange(handRangePiece)"
     (mouseup)="toggleInRange(handRangePiece)"
   >
-    <mat-card
-      handRangePieceDirective
-      [class.piece-in-range]="handRangePiece.isInRange === true"
-      class="no-select"
-    >
-      {{ displayRank(handRangePiece.rankOne)
-      }}{{ displayRank(handRangePiece.rankTwo)
-      }}{{ !handRangePiece.isPair ? (handRangePiece.isSuited ? "s" : "o") : "" }}
-    </mat-card>
+    <ht-hand-range-grid-piece [handRangePiece]=handRangePiece></ht-hand-range-grid-piece>
   </mat-grid-tile>
 </mat-grid-list>
 </div>
